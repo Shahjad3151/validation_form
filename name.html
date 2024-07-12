@@ -1,0 +1,71 @@
+<!DOCTYPE html>        
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        #table{margin-top:15vh;}
+        tr{font-size:3vh;}
+        input{font-size: 3vh; }
+        button{font-size: 3vh; }
+       
+    </style>
+<body>
+    <form>
+    <table align="center" border="1" id="table">
+        <tr><td>First-Name</td><td><input type="text" id="t1" ></td><td id="msg1">*</td></tr>
+        <tr><td>Last-Name</td><td><input type="text" id="t2" ></td><td id="msg2">*</td></tr>
+        <tr><td><button onclick="return validate()">Submit</button></td></tr>
+    </table>
+    </form>
+</body>
+</html>
+<script>
+    function validate(){
+       
+        var x1=document.getElementById("t1").value.trim();//trim remove extra space
+        var cod=/^[A-Za-z]+$/;//ye batata hai name me kia kia ho skta h
+        if(x1==""){
+            document.getElementById("msg1").innerHTML="**please enter valid name";
+            document.getElementById("t1").style.border='2px solid red' ;
+            document.getElementById("msg1").style.color='red ';
+            return false;
+        }
+        else if(x1.length<2 || x1.length>20){
+            document.getElementById("msg1").innerHTML="**please enter valid name";
+            document.getElementById("t1").style.border='2px solid red' ;
+            document.getElementById("msg1").style.color='red ';
+            return false;
+        }
+        else if(!x1.match(cod)){
+            document.getElementById("msg1").innerHTML="**please enter valid name";
+            document.getElementById("t1").style.border='2px solid red' ;
+            document.getElementById("msg1").style.color='red ';
+            return false;
+        }
+        else{
+            document.getElementById("t1").style.border='2px solid green' ;
+        }
+        //var 2 ke liye
+        var x2=document.getElementById("t2").value;
+        var codd=/^([A-Za-z ])+$/;//space diya hua hai
+        if(x2==""){
+            document.getElementById("msg2").innerHTML="**please enter valid name";
+            document.getElementById("t2").style.border='2px solid red' ;
+            document.getElementById("msg2").style.color='red ';
+            return false;
+        }
+        else if(!x2.match(codd)){
+            document.getElementById("msg2").innerHTML="**please enter valid name";
+            document.getElementById("t2").style.border='2px solid red' ;
+            document.getElementById("msg2").style.color='red ';
+            return false;
+        }
+        else{
+            document.getElementById("t2").style.border='2px solid green' ;
+        }
+        alert("Thanks Successflly Submitted");
+    }
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{width: 33vw;height: 65vh;border: 3px solid black; margin: 10vh 33vw;}
+    h1{background-color: aqua;margin-top: 0%;}
+    span{margin-left: 4vw;}
+    label{padding-left: 3vw;font-size: 3vh;line-height: 2;}
+    input{margin-left: 2vw;font-size: 3vh;}
+    button{font-size: 3vh; margin: 1vh 3vw;}
+</style>
+<body>
+    <form action="#" controls>
+    <div id="container">
+        <h1> <marquee>REGISTRATION FORM</marquee></h1>
+        <div id="table">
+          <label>Username</label>
+          <input type="text" ><br>
+          <span>**</span>
+        </div>
+        <div id="table">
+            <label>First name</label><input type="text"><br>
+            <span>**</span>
+          </div>
+          <div id="table">
+            <label>Last name</label><input type="text"><br>
+            <span>**</span>
+          </div>
+          <div id="table">
+            <label>Phone &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text"><br>
+            <span>**</span>
+          </div>
+          <div id="table">
+            <label>Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text"><br>
+            <span>**</span>
+          </div>
+          <div id="table">
+            <label>Password &nbsp;</label><input type="text"><br>
+            <span>**</span>
+          </div>
+          <button onclick="return validate()">Submit</button>
+    </div>
+    </form>
+    
+</body>
+</html>

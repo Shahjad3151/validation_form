@@ -1,0 +1,50 @@
+<!DOCTYPE html>      //null,3-20length,only-character    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        #table{margin-top:15vh;}
+        tr{font-size:3vh;}
+        input{font-size: 3vh; }
+        button{font-size: 3vh; }
+       
+    </style>
+<body>
+    <table align="center" border="1" id="table">
+        <tr><td>Userame</td><td><input type="text" id="t1" ></td><td id="msg">*</td></tr>
+        <tr><td><button onclick="return validate()">Submit</button></td></tr>
+    </table>
+</body>
+</html>
+<script>
+    function validate(){
+       
+        var x1=document.getElementById("t1").value.trim();//trim remove extra space
+        var cod=/^([A-Za-z])+$/;//ye batata hai name me kia kia ho skta h
+        if(x1==""){
+            document.getElementById("msg").innerHTML="**please enter valid name";
+            document.getElementById("t1").style.border='2px solid red' ;
+            document.getElementById("msg").style.color='red ';
+            return false;
+        }
+        else if(x1.length<3 || x1.length>20){
+            document.getElementById("msg").innerHTML="**please enter valid name";
+            document.getElementById("t1").style.border='2px solid red' ;
+            document.getElementById("msg").style.color='red ';
+            return false;
+        }
+        else if(!x1.match(cod)){
+            document.getElementById("msg").innerHTML="**please enter valid name";
+            document.getElementById("t1").style.border='2px solid red' ;
+            document.getElementById("msg").style.color='red ';
+            return false;
+        }
+        else{
+            document.getElementById("t1").style.border='2px solid green' ;
+            alert("Thanks Successflly Submitted");
+        }
+    }
+</script>
